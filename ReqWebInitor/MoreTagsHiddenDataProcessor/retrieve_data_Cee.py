@@ -14,7 +14,7 @@ INTERNATIONAL_INTEREST_RATES_CEE_XPATH_BUTTON_CLICK_DEFAULT = r'//*[@id="elem900
 
 def switch_to_International_Indices_Cee_Page(xpath_reg_click_to_jump_to_page: str = INTERNATIONAL_INDICES_CEE_XPATH_BUTTON_CLICK_DEFAULT) -> bool:
     try:
-        from ReqWebInitor.PageImporter.scrap_raw_page import getWebSource
+        from PageImporter.scrap_raw_page import getWebSource
         global global_contemporary_page
         global_contemporary_page = getWebSource(TAGET_URL).decode("utf-8")
 
@@ -33,7 +33,7 @@ def switch_to_International_Indices_Cee_Page(xpath_reg_click_to_jump_to_page: st
 
 def switch_to_International_Currencies_Cee_Page(xpath_reg_click_to_jump_to_page: str = INTERNATIONAL_CURRENCIES_CEE_XPATH_BUTTON_CLICK_DEFAULT) -> bool:
     try:
-        from ReqWebInitor.PageImporter.scrap_raw_page import getWebSource
+        from PageImporter.scrap_raw_page import getWebSource
         global global_contemporary_page
         global_contemporary_page = getWebSource(TAGET_URL).decode("utf-8")
 
@@ -52,7 +52,7 @@ def switch_to_International_Currencies_Cee_Page(xpath_reg_click_to_jump_to_page:
 
 def switch_to_International_Interest_Rates_Cee_Page(xpath_reg_click_to_jump_to_page: str = INTERNATIONAL_INTEREST_RATES_CEE_XPATH_BUTTON_CLICK_DEFAULT) -> bool:
     try:
-        from ReqWebInitor.PageImporter.scrap_raw_page import getWebSource
+        from PageImporter.scrap_raw_page import getWebSource
         global global_contemporary_page
         global_contemporary_page = getWebSource(TAGET_URL).decode("utf-8")
 
@@ -71,7 +71,7 @@ def switch_to_International_Interest_Rates_Cee_Page(xpath_reg_click_to_jump_to_p
 
 
 TAGET_URL = r"https://de.products.erstegroup.com/Retail/en/MarketsAndTrends/Overview/index.phtml"
-LOCAL_SAVED_PAGE_OF_HTML = ""
+LOCAL_SAVED_PAGE_OF_HTML = None #### ""
 
 
 MARKET_INTERNATIONAL_INDICES_EUROPE_INTRA_DAY_DATA_TABLE_web_elem_REGEX_XPATH_expr_BY_DEFAULT = \
@@ -93,7 +93,7 @@ class TextOfStructure(object):
 
     pass
 
-import cssselect
+########import cssselect
 symbolOfHtmlTree = None
 
 
@@ -104,7 +104,7 @@ def main_entry_of_cee():
     print('--◽◽◽◽◽◽◽◽--S-E-P-E-R-A-T-E-D---L-I-N-E-S--◽◽◽◽◽◽◽◽--', end = '\n\n')
     get_simple_CEE_Market_InternationalCurrency_Europe_Intraday_DataTable_Textonly()
     print('--◽◽◽◽◽◽◽◽--S-E-P-E-R-A-T-E-D---L-I-N-E-S--◽◽◽◽◽◽◽◽--', end = '\n\n')
-    """get_simple_CEE_InternationalCommodities_Europe_Intraday_DataTable_Textonly()
+    """simple_get_InternationalCommodities_Europe_Intraday_DataTable_Textonly()
     print('--------------S-E-P-E-R-A-T-E-D---L-I-N-E-S------------------------', end = '\n\n')"""
     """get_simple_CEE_InternationalCommodities_Europe_Intraday_DataTable_Textonly()
     print('--------------S-E-P-E-R-A-T-E-D---L-I-N-E-S------------------------', end = '\n\n')"""
@@ -115,7 +115,7 @@ def main_entry_of_cee():
 
 def run_internal():
     try:
-        from ReqWebInitor.PageImporter.scrap_raw_page import getWebSource
+        from PageImporter.scrap_raw_page import getWebSource
         global symbolOfHtmlTree
         ##global TAGET_URL##
         global global_contemporary_page

@@ -2,11 +2,11 @@
 #_*_coding:utf-8_*_
 # This is a sample Python script.
 
-from ReqWebInitor.run import *
+from ReqMain_EntryPy.run import runner
 
 def print_demo(name):
     # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+    print('Hi, %s' % name)  # Press Ctrl+F8 to toggle the breakpoint.
 
 
 # Press the green button in the gutter to run the script.

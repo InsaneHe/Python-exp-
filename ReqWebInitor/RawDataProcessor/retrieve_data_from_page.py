@@ -34,7 +34,7 @@ def main_entry():
 
     def run_internal():
         try:
-            from ReqWebInitor.PageImporter.scrap_raw_page import getWebSource
+            from PageImporter.scrap_raw_page import getWebSource
             global symbolOfHtmlTree
             global TAGET_URL
             global LOCAL_SAVED_PAGE_OF_HTML
