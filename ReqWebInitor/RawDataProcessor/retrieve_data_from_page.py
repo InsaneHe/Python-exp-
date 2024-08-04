@@ -6,16 +6,16 @@ TAGET_URL = r"https://de.products.erstegroup.com/Retail/en/MarketsAndTrends/Over
 LOCAL_SAVED_PAGE_OF_HTML = ""
 
 
-Market_International_EuropeIndices_Intraday_DataTable_Textonly_Regex_Xpath_Input_ByDefault = \
+MARKET_INTERNATIONAL_INDICES_EUROPE_INTRA_DAY_DATA_TABLE_web_elem_REGEX_XPATH_expr_BY_DEFAULT = \
     r'//*[@id="elem900131"]/div/div/table/tbody/tr[%d]/td[%d]'
 
-Market_InternationalCurrency_Europe_Intraday_DataTable_Textonly_Regex_Xpath_Input_ByDefault = \
+MARKET_INTERNATIONAL_CURRENCY_EUROPE_INTRA_DAY_DATA_TABLE_web_elem_REGEX_XPATH_expr_BY_DEFAULT = \
     r'//*[@id="elem900128"]/div/div/table/tbody/tr[%d]/td[%d]' # //*[@id="elem900128"]/
 
-Market_InternationalCommodities_Europe_Intraday_DataTable_Textonly_Regex_Xpath_Input_ByDefault = \
+MARKET_INTERNATIONAL_COMMODITIES_EUROPE_INTRA_DAY_DATA_TABLE_web_elem_REGEX_XPATH_expr_BY_DEFAULT = \
     r'//*[@id="elem900129"]/div/div/table/tbody/tr[%d]/td[%d]' # //*[@id="elem900129"]/
 
-Market_InternationalInterEstRates_EuropeIndices_Intraday_DataTable_Textonly_Regex_Xpath_Input_ByDefault = \
+MARKET_INTERNATIONAL_INTEREST_RATES_EUROPE_INTRA_DAY_DATA_TABLE_web_elem_REGEX_XPATH_expr_BY_DEFAULT = \
     r'//*[@id="elem900130"]/div/div/table/tbody/tr[%d]/td[%d]' # //*[@id="elem900130"]/
 
 
@@ -26,7 +26,7 @@ class TextOfStructure(object):
 from lxml import html
 import cssselect
 from lxml.cssselect import CSSSelector
-driver = None
+##driver = None  ## thre is no need to use webDriver for this simple case
 symbolOfHtmlTree = None
 
 
@@ -48,7 +48,7 @@ def main_entry():
             raise berror
 
     run_internal()
-    simple_get_Market_International_Europe_Intraday_DataTable_Textonly()
+    simple_get_Market_InternationalIndices_Europe_Intraday_DataTable_Textonly()
     print('--------------S-E-P-E-R-A-T-E-D---L-I-N-E-S------------------------', end = '\n\n')
     simple_get_Market_InternationalCurrency_Europe_Intraday_DataTable_Textonly()
     print('--------------S-E-P-E-R-A-T-E-D---L-I-N-E-S------------------------', end = '\n\n')
@@ -58,8 +58,8 @@ def main_entry():
     print('--------------------------------------------------------------------', end='\n')
 
 
-def simple_get_Market_International_Europe_Intraday_DataTable_Textonly \
-        (regex_xpath_inputOrByDefault = Market_International_EuropeIndices_Intraday_DataTable_Textonly_Regex_Xpath_Input_ByDefault):
+def simple_get_Market_InternationalIndices_Europe_Intraday_DataTable_Textonly \
+        (regex_xpath_inputOrByDefault = MARKET_INTERNATIONAL_INDICES_EUROPE_INTRA_DAY_DATA_TABLE_web_elem_REGEX_XPATH_expr_BY_DEFAULT):
     global symbolOfHtmlTree
     raw_content = ""
 
@@ -131,7 +131,7 @@ def simple_get_Market_International_Europe_Intraday_DataTable_TextOfStructure():
 
 
 def simple_get_Market_InternationalCurrency_Europe_Intraday_DataTable_Textonly \
-        (regex_xpath_inputOrByDefault = Market_InternationalCurrency_Europe_Intraday_DataTable_Textonly_Regex_Xpath_Input_ByDefault):
+        (regex_xpath_inputOrByDefault = MARKET_INTERNATIONAL_CURRENCY_EUROPE_INTRA_DAY_DATA_TABLE_web_elem_REGEX_XPATH_expr_BY_DEFAULT):
     global symbolOfHtmlTree
     raw_content = ""
 
@@ -196,7 +196,7 @@ def simple_get_Market_InternationalCurrency_Europe_Intraday_DataTable_TextOfStru
 
 
 def simple_get_Market_InternationalCommodities_Europe_Intraday_DataTable_Textonly \
-        (regex_xpath_inputOrByDefault = Market_InternationalCommodities_Europe_Intraday_DataTable_Textonly_Regex_Xpath_Input_ByDefault):
+        (regex_xpath_inputOrByDefault = MARKET_INTERNATIONAL_COMMODITIES_EUROPE_INTRA_DAY_DATA_TABLE_web_elem_REGEX_XPATH_expr_BY_DEFAULT):
     global symbolOfHtmlTree
     raw_content = ""
 
@@ -261,7 +261,7 @@ def simple_get_Market_InternationalCommodities_Europe_Intraday_DataTable_TextOfS
 
 
 def simple_get_Market_InternationalInterestRates_Europe_Intraday_DataTable_Textonly \
-        (regex_xpath_inputOrByDefault = Market_InternationalInterEstRates_EuropeIndices_Intraday_DataTable_Textonly_Regex_Xpath_Input_ByDefault):
+        (regex_xpath_inputOrByDefault = MARKET_INTERNATIONAL_INTEREST_RATES_EUROPE_INTRA_DAY_DATA_TABLE_web_elem_REGEX_XPATH_expr_BY_DEFAULT):
     global symbolOfHtmlTree
     raw_content = ""
 
